@@ -1,40 +1,44 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #050914; /* Deep navy blueprint black */
+  --bg2: #090e1f; /* Slightly lighter navy blueprint */
+  --surface: #0e162f; /* Surface glass card fill */
+  --white: #f5f5f7;
+  --gray: #868695;
+  --gray-dark: #2a3142;
+  --line: rgba(0, 245, 212, 0.04); /* Subtly teal-glowing boundaries */
+  --line-strong: rgba(0, 245, 212, 0.1);
+  --glow: rgba(0, 245, 212, 0.02);
+  --teal: #00f5d4;
+  --teal-glow: rgba(0, 245, 212, 0.15);
+  --purple: #9d4edd;
+  --purple-glow: rgba(157, 78, 221, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background: var(--bg);
+  color-scheme: dark;
 }
 
-html,
 body {
-  max-width: 100vw;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
   overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+::selection {
+  background: var(--white);
+  color: var(--bg);
 }
 
 a {
@@ -42,8 +46,58 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* ── INTERACTIVE NOISE LAYER ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface);
+  border: 2px solid var(--bg);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-dark);
+}
+
+/* Utilities for visual fidelity */
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 245, 212, 0.2);
+}
+
+.serif-text {
+  font-family: var(--font-instrument-serif), serif;
+  font-style: italic;
+}
+
+/* Custom animation defaults */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
