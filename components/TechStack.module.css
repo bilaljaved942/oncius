@@ -1,6 +1,6 @@
 .techSection {
-  padding: 8rem 3.5rem;
-  background: var(--bg2);
+  padding: 10rem 3.5rem;
+  background: var(--bg);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   position: relative;
@@ -17,13 +17,13 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--line);
 }
 
 .sectionTag {
   font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gray);
   display: flex;
@@ -33,80 +33,75 @@
 
 .sectionTag::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.4);
   display: inline-block;
-  animation: pulse 2s ease infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
 }
 
 .sectionTitle {
-  font-weight: 300;
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .sectionTitle em {
   font-family: var(--font-instrument-serif), serif;
   font-style: italic;
+  font-weight: 300;
 }
 
 /* ── MARQUEE TRACK ── */
 .marqueeTrack {
   overflow: hidden;
-  padding: 1.5rem 0;
+  padding: 1.8rem 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--bg);
+  background: var(--bg2);
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 }
 
 .marqueeList {
   display: flex;
-  gap: 5rem;
+  gap: 4rem;
   white-space: nowrap;
-  animation: scrollMarquee 35s linear infinite;
+  animation: scrollMarquee 40s linear infinite;
   width: max-content;
 }
 
 .marqueeList span {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.15);
+  color: rgba(255, 255, 255, 0.35);
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  transition: color 0.3s;
+  gap: 1.5rem;
+  transition: color 0.25s ease;
 }
 
 .marqueeList span:hover {
-  color: var(--teal);
+  color: var(--white);
 }
 
-.marqueeList span::after {
-  content: '✦';
-  margin-left: 5rem;
-  font-size: 0.5rem;
-  color: var(--gray-dark);
+.marqueeDot {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.6rem;
 }
 
 @keyframes scrollMarquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-33.333%); }
 }
 
 /* ── GRID SYSTEM ── */
@@ -117,36 +112,20 @@
 }
 
 .techCard {
-  background: var(--bg);
+  background: var(--bg2);
   border: 1px solid var(--line);
-  padding: 3rem 2.2rem;
-  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.techCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--teal), var(--purple));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-}
-
-.techCard:hover::before {
-  transform: scaleX(1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .techCard:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cardHead {
@@ -157,58 +136,63 @@
 }
 
 .techIcon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line-strong);
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  color: var(--white);
-  transition: border-color 0.3s, color 0.3s;
+  font-size: 1.2rem;
+  color: var(--gray);
+  background: rgba(255, 255, 255, 0.01);
+  transition: all 0.3s ease;
 }
 
 .techCard:hover .techIcon {
-  border-color: var(--teal);
-  color: var(--teal);
+  border-color: var(--white);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.04);
+  transform: scale(1.05);
 }
 
 .techRole {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--gray);
   padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.02);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--line);
+  transition: all 0.3s ease;
 }
 
 .techCard:hover .techRole {
-  border-color: var(--teal-glow);
+  border-color: var(--line-strong);
   color: var(--white);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .techCard h3 {
   font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: 0.01em;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
   margin-bottom: 0.8rem;
   color: var(--white);
 }
 
 .techCard p {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--gray);
-  font-weight: 300;
-  line-height: 1.8;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
   .techSection {
-    padding: 6rem 2.5rem;
+    padding: 8rem 2.5rem;
   }
   .techGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -217,17 +201,20 @@
 
 @media (max-width: 768px) {
   .techSection {
-    padding: 5rem 1.5rem;
+    padding: 6rem 1.5rem;
   }
   .sectionHead {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
   }
   .techGrid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .techCard {
-    padding: 2.5rem 1.8rem;
+    padding: 2.5rem 2rem;
   }
 }

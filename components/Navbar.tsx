@@ -31,37 +31,14 @@ export default function Navbar() {
     <>
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
         <a href="#" className={styles.logoContainer} onClick={handleLinkClick}>
-          <div className={styles.logoIcon}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#070708"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-              <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-            </svg>
-          </div>
-          <span className={styles.logoText}>Oncius</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/oncius_logo_dark.png" alt="Oncius Logo" className={styles.logoImg} />
         </a>
 
         <ul className={styles.navLinks}>
           <li>
             <a href="#services" onClick={handleLinkClick}>
               Services
-            </a>
-          </li>
-          <li>
-            <a href="#about" onClick={handleLinkClick}>
-              About
             </a>
           </li>
           <li>
@@ -74,12 +51,14 @@ export default function Navbar() {
               FAQs
             </a>
           </li>
+          <li>
+            <a href="#contact" onClick={handleLinkClick}>
+              Contact
+            </a>
+          </li>
         </ul>
 
         <div className={styles.rightActions}>
-          <a href="#contact" className={styles.signIn}>
-            Sign In
-          </a>
           <a href="#contact" className={styles.ctaBtn}>
             Get Started
           </a>
@@ -138,11 +117,6 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#about" onClick={handleLinkClick}>
-              About
-            </a>
-          </li>
-          <li>
             <a href="#tech" onClick={handleLinkClick}>
               Technology
             </a>
@@ -153,6 +127,11 @@ export default function Navbar() {
             </a>
           </li>
           <li>
+            <a href="#contact" onClick={handleLinkClick}>
+              Contact
+            </a>
+          </li>
+          <li>
             <a
               href="#contact"
               onClick={handleLinkClick}
@@ -160,7 +139,7 @@ export default function Navbar() {
                 display: "inline-block",
                 marginTop: "1.5rem",
                 padding: "0.8rem 1.8rem",
-                background: "linear-gradient(135deg, #00f5d4, #00bbf9)",
+                background: "var(--white)",
                 color: "var(--bg)",
                 textAlign: "center",
                 fontWeight: "700",

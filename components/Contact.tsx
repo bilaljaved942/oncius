@@ -26,7 +26,7 @@ export default function Contact() {
             Let&apos;s build<br />
             something <em><strong>great</strong></em>
           </h2>
-          <p>Ready to launch your next custom platform? Get in touch with our team.</p>
+          <p>Ready to accelerate your visual AI product? Contact our engineering team to schedule a technical discovery call.</p>
         </div>
 
         <div className={styles.contactGrid}>
@@ -50,8 +50,8 @@ export default function Contact() {
                 </svg>
                 <h3>Message Logged Successfully</h3>
                 <p style={{ marginTop: "1rem", color: "var(--gray)", fontSize: "0.88rem" }}>
-                  Thank you! A senior technical architect will review your specifications 
-                  and reach back via email within 24 hours.
+                  Thank you! A senior Computer Vision architect will review your project requirements 
+                  and reach back to schedule a technical discovery call within 24 hours.
                 </p>
               </div>
             ) : (
@@ -87,7 +87,7 @@ export default function Contact() {
                   <textarea
                     id="project"
                     rows={4}
-                    placeholder="Describe your goals, tech stack preferences, and timelines..."
+                    placeholder="Describe your model goals, inference constraints, annotation scale, and camera streaming requirements..."
                     className={styles.formInput}
                     style={{ resize: "vertical" }}
                     value={form.project}
@@ -135,3 +135,4 @@ export default function Contact() {
     </section>
   );
 }
+

@@ -16,19 +16,19 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Oncius — AI-Powered Emergent Tech & Custom Solutions",
-  description: "Oncius specializes in AI, ML, emerging technologies, and elite custom software development. We build partnerships that drive real outcomes and transform intelligent ideas into scalable business solutions.",
-  metadataBase: new URL("https://devdaa.com"), // Use appropriate base
+  title: "Oncius — Elite Computer Vision & Visual AI Engineering Studio",
+  description: "Oncius specializes in high-performance computer vision, custom model training, real-time video analytics, and edge AI optimization for deep tech startups and enterprise teams.",
+  metadataBase: new URL("https://oncius.com"), // Updated base domain
   openGraph: {
-    title: "Oncius — AI-Powered Emergent Tech & Custom Solutions",
-    description: "Oncius specializes in AI, ML, emerging technologies, and elite custom software development. We build partnerships that drive real outcomes and transform intelligent ideas into scalable business solutions.",
+    title: "Oncius — Elite Computer Vision & Visual AI Engineering Studio",
+    description: "Oncius specializes in high-performance computer vision, custom model training, real-time video analytics, and edge AI optimization for deep tech startups and enterprise teams.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oncius — AI-Powered Emergent Tech & Custom Solutions",
-    description: "Oncius specializes in AI, ML, emerging technologies, and elite custom software development. We build partnerships that drive real outcomes and transform intelligent ideas into scalable business solutions.",
+    title: "Oncius — Elite Computer Vision & Visual AI Engineering Studio",
+    description: "Oncius specializes in high-performance computer vision, custom model training, real-time video analytics, and edge AI optimization for deep tech startups and enterprise teams.",
   }
 };
 

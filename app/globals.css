@@ -1,17 +1,17 @@
 :root {
-  --bg: #050914; /* Deep navy blueprint black */
-  --bg2: #090e1f; /* Slightly lighter navy blueprint */
-  --surface: #0e162f; /* Surface glass card fill */
-  --white: #f5f5f7;
-  --gray: #868695;
-  --gray-dark: #2a3142;
-  --line: rgba(0, 245, 212, 0.04); /* Subtly teal-glowing boundaries */
-  --line-strong: rgba(0, 245, 212, 0.1);
-  --glow: rgba(0, 245, 212, 0.02);
-  --teal: #00f5d4;
-  --teal-glow: rgba(0, 245, 212, 0.15);
-  --purple: #9d4edd;
-  --purple-glow: rgba(157, 78, 221, 0.15);
+  --bg: #09090b; /* Sophisticated deep obsidian base */
+  --bg2: #121214; /* Deep graphite charcoal secondary */
+  --surface: #18181b; /* Sleek slate surface card */
+  --white: #fafafa;
+  --gray: #a1a1aa;
+  --gray-dark: #27272a;
+  --line: rgba(255, 255, 255, 0.04); /* Subtly elegant minimalist boundaries */
+  --line-strong: rgba(255, 255, 255, 0.08);
+  --glow: rgba(255, 255, 255, 0.01);
+  --teal: #ffffff; /* Redefined to crisp white for seamless premium styling */
+  --teal-glow: rgba(255, 255, 255, 0.08);
+  --purple: #d4d4d8; /* Redefined to clean warm silver for soft highlights */
+  --purple-glow: rgba(255, 255, 255, 0.04);
 }
 
 * {
@@ -51,14 +51,14 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -66,18 +66,18 @@ body::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--surface);
+  background: var(--gray-dark);
   border: 2px solid var(--bg);
-  border-radius: 5px;
+  border-radius: 99px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gray-dark);
+  background: var(--gray);
 }
 
 /* Utilities for visual fidelity */
 .glow-text {
-  text-shadow: 0 0 20px rgba(0, 245, 212, 0.2);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .serif-text {

@@ -10,20 +10,20 @@ interface FAQItem {
 
 const FAQ_LIST: FAQItem[] = [
   {
-    q: "How does Oncius ensure the quality of its custom software developments?",
-    a: "We implement an elite DevOps workflow incorporating strict automated Playwright/Jest testing gates in our CI/CD pipelines. Every code integration is checked for regressions and performance drops prior to merging, keeping our delivery standard at zero-critical bug thresholds.",
+    q: "How do you guarantee custom model accuracy and minimize false positives?",
+    a: "Model accuracy is governed by dataset quality and testing rigor. We establish strict offline evaluation loops, utilizing target verification sets with cross-validation protocols. By tuning confidence thresholds and precision-recall curves (mAP), we optimize predictions for your specific operational constraints before deploying.",
   },
   {
-    q: "What is your onboarding and engagement timeline?",
-    a: "For staff augmentation, we can onboard vetted senior technical engineers in an average of 5 days. For full-scale custom solution consulting, we typically complete discovery in 1 week, deliver a detailed architecture blueprint, and start execution within 10 days of alignment.",
+    q: "Can you deploy models to execute fully on edge devices with zero internet connection?",
+    a: "Yes. We specialize in edge-native AI. By compiling deep learning models via TensorRT or ONNX Runtime and deploying on specialized hardware like NVIDIA Jetson Orin modules or custom embedded compute boards, we achieve sub-millisecond local processing. This eliminates cloud bandwidth costs and ensures robust, zero-downtime operation.",
   },
   {
-    q: "Do you offer post-deployment maintenance and updates?",
-    a: "Yes. Every custom delivery includes an optional 24/7 support retainer. We set up active Prometheus and Grafana alerts to monitor system health and guarantee a 99.99% operational uptime standard with zero-downtime hot-patches.",
+    q: "How do you handle dataset collection, annotation, and data privacy constraints?",
+    a: "We design secure dataset curation workflows. We can ingest raw camera feeds, implement automated face/license-plate blurring to ensure compliance, and securely manage high-precision bounding box or segmentation annotation loops using CVAT. All assets are handled within isolated, encrypted sandboxes.",
   },
   {
-    q: "Can you assist in upgrading legacy platforms with AI integrations?",
-    a: "Absolutely. We specialize in digital transformation. We can audit your legacy database/infrastructure, build custom API adapters (typically using highly documented FastAPI or Node.js), and seamlessly introduce machine learning models or LLMs without disrupting your live services.",
+    q: "What is your typical timeline for delivering a functional model or pipeline PoC?",
+    a: "We work rapidly. We can typically ingest your preliminary dataset, benchmark a pre-trained baseline model, and deliver a fully functional pipeline Proof of Concept (PoC) in 7 to 10 business days. This allows you to validate real-world latency, throughput, and baseline precision before committing to full-scale training.",
   },
 ];
 
@@ -66,7 +66,19 @@ export default function FAQ() {
                 >
                   <span>{faq.q}</span>
                   <span className={styles.chevron}>
-                    {isOpen ? "▲" : "▼"}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                   </span>
                 </button>
 
@@ -85,3 +97,4 @@ export default function FAQ() {
     </section>
   );
 }
+
